@@ -1,0 +1,185 @@
+{
+ "name": "骆怀瑜",
+ "stats1": [
+  {
+   "icon": "▶️",
+   "label": "开播次数",
+   "value": 26,
+   "unit": "次"
+  },
+  {
+   "icon": "⏱️",
+   "label": "累计时长",
+   "value": "44小时27分",
+   "unit": ""
+  },
+  {
+   "icon": "⏳",
+   "label": "平均时长",
+   "value": "1小时42分",
+   "unit": ""
+  },
+  {
+   "icon": "📅",
+   "label": "距上次开播",
+   "since": "2026-10-20",
+   "unit": "天"
+  }
+ ],
+ "stats2": [
+  {
+   "icon": "🎵",
+   "label": "歌单歌曲数",
+   "value": 506,
+   "unit": "首"
+  },
+  {
+   "icon": "👥",
+   "label": "粉丝数",
+   "value": "3118",
+   "unit": ""
+  },
+  {
+   "icon": "📤",
+   "label": "距上次上传视频",
+   "since": "2022-04-12",
+   "unit": "天"
+  },
+  {
+   "icon": "🔁",
+   "label": "平均开播间隔",
+   "value": "8.3",
+   "unit": "天"
+  }
+ ],
+ "month_now": {
+  "label": "11 月",
+  "count": 0,
+  "dur": "—",
+  "avg": "—"
+ },
+ "month_prev": {
+  "label": "10 月",
+  "count": 5,
+  "dur": "8小时27分",
+  "avg": "1小时41分"
+ },
+ "recommend": [
+  {
+   "name": "雨落江南巷",
+   "norm": "雨落江南巷",
+   "count": 10,
+   "cnt_text": "累计 10 次",
+   "cover": "",
+   "letter": "Y"
+  },
+  {
+   "name": "女儿心如水",
+   "norm": "女儿心如水",
+   "count": 7,
+   "cnt_text": "累计 7 次",
+   "cover": "",
+   "letter": "N"
+  },
+  {
+   "name": "最难得",
+   "norm": "最难得",
+   "count": 7,
+   "cnt_text": "累计 7 次",
+   "cover": "",
+   "letter": "Z"
+  },
+  {
+   "name": "循迹",
+   "norm": "循迹",
+   "count": 5,
+   "cnt_text": "近10场 5 次",
+   "cover": "",
+   "letter": "X"
+  },
+  {
+   "name": "江声入旧年",
+   "norm": "江声入旧年",
+   "count": 4,
+   "cnt_text": "近10场 4 次",
+   "cover": "",
+   "letter": "J"
+  },
+  {
+   "name": "关山酒",
+   "norm": "关山酒",
+   "count": 3,
+   "cnt_text": "近10场 3 次",
+   "cover": "",
+   "letter": "G"
+  }
+ ],
+ "recent": [
+  {
+   "date": "2026-10-20",
+   "time": "18:11:13",
+   "dur": "1小时14分",
+   "title": "恢复训练！唱一会",
+   "url": ""
+  },
+  {
+   "date": "2026-10-16",
+   "time": "20:25:06",
+   "dur": "1小时17分",
+   "title": "唱歌",
+   "url": ""
+  },
+  {
+   "date": "2026-10-15",
+   "time": "17:20:18",
+   "dur": "2小时43分",
+   "title": "唱歌",
+   "url": ""
+  }
+ ],
+ "first_date": "2025-12-10",
+ "last_date": "2026-10-20",
+ "updated": "2026-11-01 20:23",
+ "media": {
+  "avatar": "assets/avatar.png",
+  "bg": "assets/bg.png",
+  "tracks": [
+   {
+    "name": "骆怀瑜-少女作妖日记",
+    "src": "assets/music/%E9%AA%86%E6%80%80%E7%91%9C-%E5%B0%91%E5%A5%B3%E4%BD%9C%E5%A6%96%E6%97%A5%E8%AE%B0.wav"
+   }
+  ]
+ },
+ "layout": {
+  "nav": {
+   "x": 100,
+   "y": 0,
+   "scale": 100
+  },
+  "stats1": {
+   "x": 200,
+   "y": 250,
+   "scale": 60
+  },
+  "stats2": {
+   "x": 200,
+   "y": 200,
+   "scale": 60
+  },
+  "months": {
+   "x": 0,
+   "y": 200,
+   "scale": 100
+  },
+  "bottom3": {
+   "x": 0,
+   "y": 220,
+   "scale": 100
+  },
+  "footer": {
+   "x": 0,
+   "y": 220,
+   "scale": 100
+  }
+ }
+}

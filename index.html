@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>骆怀瑜 · 个人主页</title>
+<style>
+/* ==================== 模版设置（改这里整体换肤） ==================== */
+:root{
+  /* 无背景图时的兜底渐变 */
+  --bg1:#a18cd1; --bg2:#fbc2eb; --bg3:#fad0c4;
+  /* 盖在背景图上的暗色罩（可读性） */
+  --veil:rgba(38,20,74,.34); --veil2:rgba(38,20,74,.5);
+  /* 文字：主色 / 次要（卡片内） */
+  --ink:#4a3b6b;  --ink-soft:#8a7bab;
+  /* 强调色：数字单位、按钮 */
+  --accent:#e58ab5; --accent2:#8f7bd8;
+  /* 卡片：玻璃拟态 */
+  --card:rgba(255,255,255,.6); --card-border:rgba(255,255,255,.85);
+  --radius:22px;
+  --shadow:0 10px 30px rgba(30,15,60,.35);
+  --shadow-soft:0 6px 18px rgba(30,15,60,.25);
+  --maxw:1060px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC",sans-serif;
+  color:var(--ink); min-height:100vh;
+  background:linear-gradient(160deg,var(--bg1) 0%,var(--bg2) 55%,var(--bg3) 100%);
+  background-attachment:fixed;
+}
+body.with-bg{background:var(--bgimg,none) center/cover fixed no-repeat #241546}
+body.with-bg::before{content:"";position:fixed;inset:0;z-index:0;
+  background:linear-gradient(180deg,var(--veil) 0%,var(--veil2) 100%);pointer-events:none}
+.wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:18px 18px 60px}
+
+/* ---------- 顶部导航（靠左，给背景图右上角的题字留位置） ---------- */
+nav.top{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:18px;
+  text-shadow:0 2px 8px rgba(20,10,40,.6)}
+.brand img{width:38px;height:38px;border-radius:50%;object-fit:cover;
+  border:2px solid rgba(255,255,255,.85);box-shadow:var(--shadow-soft)}
+.tabs{display:flex;gap:8px}
+.tabs a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+  padding:8px 18px;border-radius:999px;font-size:14px;font-weight:600;
+  color:#6d5a9c;background:rgba(255,255,255,.55);border:1px solid var(--card-border);
+  backdrop-filter:blur(6px);box-shadow:var(--shadow-soft);transition:.2s}
+.tabs a:hover{transform:translateY(-2px)}
+.tabs a.on{background:#fff;color:var(--accent)}
+
+/* ---------- 数据卡片 ---------- */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);backdrop-filter:blur(9px);padding:15px 12px;text-align:center}
+.card .ico{font-size:21px}
+.card .label{margin-top:5px;font-size:12.5px;color:var(--ink-soft);font-weight:600}
+.card .value{margin-top:3px;font-size:23px;font-weight:800;color:var(--ink)}
+.card .unit{font-size:12.5px;font-weight:600;color:var(--accent);margin-left:2px}
+
+/* ---------- 本月 / 上月 ---------- */
+.months{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.panel{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);backdrop-filter:blur(9px);padding:18px}
+.panel h2{font-size:16px;display:flex;align-items:center;gap:8px}
+.panel h2 .tag{font-size:11px;font-weight:600;color:var(--accent);
+  background:rgba(229,138,181,.18);padding:2px 10px;border-radius:999px}
+.minis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.mini{background:rgba(255,255,255,.6);border:1px solid var(--card-border);
+  border-radius:16px;padding:12px 8px;text-align:center}
+.mini .v{font-size:18px;font-weight:800}
+.mini .v em{font-style:normal;font-size:12px;font-weight:600;color:var(--accent);margin-left:2px}
+.mini .k{margin-top:3px;font-size:12px;color:var(--ink-soft)}
+
+/* ---------- 底部三栏 ---------- */
+.bottom3{display:grid;grid-template-columns:1.15fr 1.25fr 1fr;gap:14px;margin-top:16px}
+/* 播放器 */
+.player .track{display:flex;align-items:center;gap:12px;margin-top:12px}
+.player .disc{width:58px;height:58px;border-radius:50%;flex:none;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:24px;
+  border:3px solid #fff;box-shadow:var(--shadow-soft)}
+.player.playing .disc{animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.player .t-name{font-size:16px;font-weight:800;max-width:190px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.player .t-sub{font-size:12px;color:var(--ink-soft);margin-top:2px}
+.player .bar{height:6px;border-radius:999px;background:rgba(143,123,216,.25);
+  position:relative;margin-top:14px;cursor:pointer}
+.player .bar i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:999px;
+  background:linear-gradient(90deg,var(--accent2),var(--accent))}
+.player .time{display:flex;justify-content:space-between;font-size:11px;
+  color:var(--ink-soft);margin-top:4px}
+.player .ctrl{display:flex;justify-content:center;align-items:center;gap:20px;
+  font-size:17px;color:var(--ink-soft);margin-top:10px}
+.player .ctrl button{border:none;background:none;cursor:pointer;
+  font-size:17px;color:var(--ink-soft)}
+.player .ctrl .play{width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;font-size:17px;
+  box-shadow:var(--shadow-soft);transition:.2s}
+.player .ctrl .play:hover{transform:scale(1.08)}
+.player .list{margin-top:12px;max-height:118px;overflow:auto;display:flex;
+  flex-direction:column;gap:4px}
+.player .list button{display:flex;justify-content:space-between;gap:8px;width:100%;
+  border:1px solid var(--card-border);background:rgba(255,255,255,.5);
+  border-radius:10px;padding:6px 10px;font-size:12px;color:var(--ink);cursor:pointer;text-align:left}
+.player .list button.on{background:rgba(229,138,181,.22);border-color:var(--accent);
+  color:var(--accent);font-weight:700}
+.player .empty{margin-top:14px;font-size:13px;color:var(--ink-soft);line-height:1.8}
+/* 歌单推荐 */
+.recs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.rec{border-radius:16px;overflow:hidden;background:rgba(255,255,255,.6);
+  border:1px solid var(--card-border);text-align:center;padding-bottom:8px;transition:.2s}
+.rec:hover{transform:translateY(-3px);box-shadow:var(--shadow-soft)}
+.rec .c{height:70px;display:flex;align-items:center;justify-content:center;
+  font-size:26px;color:#fff;font-weight:800}
+.rec .c img{width:100%;height:100%;object-fit:cover}
+.rec .n{font-size:12.5px;font-weight:700;margin-top:6px;padding:0 4px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rec .cnt{font-size:11px;color:var(--ink-soft)}
+/* 近期直播 */
+.lives{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.live{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.6);
+  border:1px solid var(--card-border);border-radius:16px;padding:10px 12px;
+  text-decoration:none;color:var(--ink);transition:.2s}
+.live:hover{transform:translateX(3px);box-shadow:var(--shadow-soft)}
+.live .d{min-width:72px;text-align:center}
+.live .d b{display:block;font-size:13px}
+.live .d span{font-size:11px;color:var(--ink-soft)}
+.live .t{flex:1;font-size:13px;font-weight:600;overflow:hidden;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.live .dur{font-size:11px;font-weight:700;color:var(--accent);
+  background:rgba(229,138,181,.16);border-radius:999px;padding:2px 8px;white-space:nowrap}
+.live .go{color:var(--accent);font-weight:800}
+footer{margin-top:24px;text-align:center;font-size:12px;color:#fff;
+  text-shadow:0 1px 6px rgba(20,10,40,.7)}
+
+@media (max-width:860px){
+  .grid4{grid-template-columns:repeat(2,1fr)}
+  .months{grid-template-columns:1fr}
+  .bottom3{grid-template-columns:1fr}
+}
+</style>
+<style>body.with-bg{--bgimg:url('assets/bg.png')}</style>
+</head>
+<body class="with-bg">
+<div class="wrap">
+  <nav class="top" style="transform:translate(100px,0px) scale(1.00)">
+    <div class="brand"><img src="assets/avatar.png" alt=""><span>骆怀瑜</span></div>
+    <div class="tabs">
+      <a class="on" href="index.html">🏠 首页</a>
+      <a href="songlist.html">🎵 歌单</a>
+      <a href="about.html">👤 关于我</a>
+    </div>
+  </nav>
+
+  <section class="grid4" style="transform:translate(200px,250px) scale(0.60)"><div class="card"><div class="ico">▶️</div><div class="label">开播次数</div><div class="value"><b>26</b><span class="unit">次</span></div></div><div class="card"><div class="ico">⏱️</div><div class="label">累计时长</div><div class="value"><b>44小时27分</b></div></div><div class="card"><div class="ico">⏳</div><div class="label">平均时长</div><div class="value"><b>1小时42分</b></div></div><div class="card"><div class="ico">📅</div><div class="label">距上次开播</div><div class="value"><b data-since="2026-10-20">—</b><span class="unit">天</span></div></div></section>
+  <section class="grid4" style="transform:translate(200px,200px) scale(0.60)"><div class="card"><div class="ico">🎵</div><div class="label">歌单歌曲数</div><div class="value"><b>506</b><span class="unit">首</span></div></div><div class="card"><div class="ico">👥</div><div class="label">粉丝数</div><div class="value"><b>3118</b></div></div><div class="card"><div class="ico">📤</div><div class="label">距上次上传视频</div><div class="value"><b data-since="2022-04-12">—</b><span class="unit">天</span></div></div><div class="card"><div class="ico">🔁</div><div class="label">平均开播间隔</div><div class="value"><b>8.3</b><span class="unit">天</span></div></div></section>
+  <section class="months" style="transform:translate(0px,200px) scale(1.00)">
+    <div class="panel">
+      <h2>🌙 本月开播 <span class="tag">11 月</span></h2>
+      <div class="minis">
+        <div class="mini"><div class="v"><b>0</b><em>次</em></div><div class="k">开播次数</div></div>
+        <div class="mini"><div class="v"><b>—</b></div><div class="k">开播时长</div></div>
+        <div class="mini"><div class="v"><b>—</b></div><div class="k">平均开播时长</div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>🌗 上月回顾 <span class="tag">10 月</span></h2>
+      <div class="minis">
+        <div class="mini"><div class="v"><b>5</b><em>次</em></div><div class="k">开播次数</div></div>
+        <div class="mini"><div class="v"><b>8小时27分</b></div><div class="k">开播时长</div></div>
+        <div class="mini"><div class="v"><b>1小时41分</b></div><div class="k">平均开播时长</div></div>
+      </div>
+    </div></section>
+
+  <section class="bottom3" style="transform:translate(0px,220px) scale(1.00)">
+    
+    <div class="panel player">
+      <h2>🎧 音乐播放器</h2>
+      <div class="track">
+        <div class="disc">♪</div>
+        <div>
+          <div class="t-name">骆怀瑜-少女作妖日记</div>
+          <div class="t-sub">本地音乐 · 共 1 首</div>
+        </div>
+      </div>
+      <div class="bar"><i></i></div>
+      <div class="time"><span class="t-cur">00:00</span><span class="t-total">00:00</span></div>
+      <div class="ctrl">
+        <button class="prev" title="上一首">⏮</button>
+        <button class="play" title="播放 / 暂停">▶</button>
+        <button class="next" title="下一首">⏭</button>
+      </div>
+      <div class="list"></div>
+    </div>
+    <div class="panel">
+      <h2>🎵 歌单推荐</h2>
+      <div class="recs"><div class="rec"><div class="c" style="background:#8f7bd8">Y</div><div class="n">雨落江南巷</div><div class="cnt">累计 10 次</div></div><div class="rec"><div class="c" style="background:#e58ab5">N</div><div class="n">女儿心如水</div><div class="cnt">累计 7 次</div></div><div class="rec"><div class="c" style="background:#7fb4e0">Z</div><div class="n">最难得</div><div class="cnt">累计 7 次</div></div><div class="rec"><div class="c" style="background:#e0a45c">X</div><div class="n">循迹</div><div class="cnt">近10场 5 次</div></div><div class="rec"><div class="c" style="background:#6fc2a8">J</div><div class="n">江声入旧年</div><div class="cnt">近10场 4 次</div></div><div class="rec"><div class="c" style="background:#c57f9e">G</div><div class="n">关山酒</div><div class="cnt">近10场 3 次</div></div></div>
+    </div>
+    <div class="panel">
+      <h2>📺 近期直播</h2>
+      <div class="lives"><a class="live" href="#" target="_blank"><div class="d"><b>10-20</b><span>18:11:13</span></div><div class="t">恢复训练！唱一会</div><span class="dur">1小时14分</span><div class="go">›</div></a><a class="live" href="#" target="_blank"><div class="d"><b>10-16</b><span>20:25:06</span></div><div class="t">唱歌</div><span class="dur">1小时17分</span><div class="go">›</div></a><a class="live" href="#" target="_blank"><div class="d"><b>10-15</b><span>17:20:18</span></div><div class="t">唱歌</div><span class="dur">2小时43分</span><div class="go">›</div></a></div>
+    </div>
+  </section>
+
+  <footer style="transform:translate(0px,220px) scale(1.00)">数据更新于 2026-11-01 20:23 · 目前数据更新至 2025-12-10 至 2026-10-20</footer>
+</div>
+<script>window.__TRACKS__ = [{"name": "骆怀瑜-少女作妖日记", "src": "assets/music/%E9%AA%86%E6%80%80%E7%91%9C-%E5%B0%91%E5%A5%B3%E4%BD%9C%E5%A6%96%E6%97%A5%E8%AE%B0.wav"}];</script>
+<script>
+// 距上次开播 / 上传视频的天数：按“今天”动态算
+(function(){
+  var today = new Date(); today.setHours(0,0,0,0);
+  document.querySelectorAll('[data-since]').forEach(function(el){
+    var d = new Date(el.getAttribute('data-since') + 'T00:00:00');
+    if (isNaN(d)) return;
+    el.textContent = Math.round((today - d) / 86400000);
+  });
+})();
+// 本地音乐播放器
+(function(){
+  var panel = document.querySelector('.player');
+  if (!panel || !window.__TRACKS__ || !window.__TRACKS__.length) return;
+  var tracks = window.__TRACKS__;
+  var audio = new Audio();
+  var idx = 0, seeking = false;
+  var nameEl = panel.querySelector('.t-name');
+  var playBtn = panel.querySelector('.play');
+  var bar = panel.querySelector('.bar'), fill = panel.querySelector('.bar i');
+  var cur = panel.querySelector('.t-cur'), total = panel.querySelector('.t-total');
+  var listEl = panel.querySelector('.list');
+  function fmt(s){
+    if (!isFinite(s)) return '00:00';
+    s = Math.floor(s);
+    return String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
+  }
+  function load(i, autoplay){
+    idx = (i + tracks.length) % tracks.length;
+    audio.src = tracks[idx].src;
+    nameEl.textContent = tracks[idx].name;
+    nameEl.title = tracks[idx].name;
+    listEl.querySelectorAll('button').forEach(function(b, j){
+      b.classList.toggle('on', j === idx);
+    });
+    if (autoplay) audio.play();
+  }
+  tracks.forEach(function(t, i){
+    var b = document.createElement('button');
+    b.innerHTML = '<span>♪ ' + t.name.replace(/</g,'&lt;') + '</span><span>' + (i+1) + '</span>';
+    b.onclick = function(){ load(i, true); };
+    listEl.appendChild(b);
+  });
+  playBtn.onclick = function(){ audio.paused ? audio.play() : audio.pause(); };
+  panel.querySelector('.prev').onclick = function(){ load(idx - 1, true); };
+  panel.querySelector('.next').onclick = function(){ load(idx + 1, true); };
+  audio.addEventListener('play', function(){ playBtn.textContent = '⏸'; panel.classList.add('playing'); });
+  audio.addEventListener('pause', function(){ playBtn.textContent = '▶'; panel.classList.remove('playing'); });
+  audio.addEventListener('ended', function(){ load(idx + 1, true); });
+  audio.addEventListener('timeupdate', function(){
+    if (!seeking && audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+    cur.textContent = fmt(audio.currentTime);
+    total.textContent = fmt(audio.duration);
+  });
+  function seek(e){
+    var r = bar.getBoundingClientRect();
+    var p = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+    if (audio.duration) audio.currentTime = p * audio.duration;
+    fill.style.width = (p * 100) + '%';
+  }
+  bar.addEventListener('mousedown', function(e){ seeking = true; seek(e); });
+  window.addEventListener('mousemove', function(e){ if (seeking) seek(e); });
+  window.addEventListener('mouseup', function(){ seeking = false; });
+  load(0, false);
+})();
+</script>
+</body>
+</html>
