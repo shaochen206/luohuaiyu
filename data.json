@@ -4,25 +4,25 @@
   {
    "icon": "▶️",
    "label": "开播次数",
-   "value": 27,
+   "value": 30,
    "unit": "次"
   },
   {
    "icon": "⏱️",
    "label": "累计时长",
-   "value": "44小时59分",
+   "value": "48小时25分",
    "unit": ""
   },
   {
    "icon": "⏳",
    "label": "平均时长",
-   "value": "1小时39分",
+   "value": "1小时36分",
    "unit": ""
   },
   {
    "icon": "📅",
    "label": "距上次开播",
-   "since": "2026-10-20",
+   "since": "2026-11-05",
    "unit": "天"
   }
  ],
@@ -30,7 +30,7 @@
   {
    "icon": "🎵",
    "label": "歌单歌曲数",
-   "value": 510,
+   "value": 515,
    "unit": "首"
   },
   {
@@ -48,15 +48,15 @@
   {
    "icon": "🔁",
    "label": "平均开播间隔",
-   "value": "8.3",
+   "value": "8.9",
    "unit": "天"
   }
  ],
  "month_now": {
   "label": "11 月",
-  "count": 0,
-  "dur": "—",
-  "avg": "—"
+  "count": 1,
+  "dur": "49分33秒",
+  "avg": "49分33秒"
  },
  "month_prev": {
   "label": "10 月",
@@ -75,6 +75,15 @@
    "href": "songlist.html#s-%E9%9B%A8%E8%90%BD%E6%B1%9F%E5%8D%97%E5%B7%B7"
   },
   {
+   "name": "最难得",
+   "norm": "最难得",
+   "count": 8,
+   "cnt_text": "累计 8 次",
+   "cover": "",
+   "letter": "Z",
+   "href": "songlist.html#s-%E6%9C%80%E9%9A%BE%E5%BE%97"
+  },
+  {
    "name": "女儿心如水",
    "norm": "女儿心如水",
    "count": 7,
@@ -82,15 +91,6 @@
    "cover": "",
    "letter": "N",
    "href": "songlist.html#s-%E5%A5%B3%E5%84%BF%E5%BF%83%E5%A6%82%E6%B0%B4"
-  },
-  {
-   "name": "最难得",
-   "norm": "最难得",
-   "count": 7,
-   "cnt_text": "累计 7 次",
-   "cover": "",
-   "letter": "Z",
-   "href": "songlist.html#s-%E6%9C%80%E9%9A%BE%E5%BE%97"
   },
   {
    "name": "循迹",
@@ -102,15 +102,6 @@
    "href": "songlist.html#s-%E5%BE%AA%E8%BF%B9"
   },
   {
-   "name": "江声入旧年",
-   "norm": "江声入旧年",
-   "count": 4,
-   "cnt_text": "近10场 4 次",
-   "cover": "",
-   "letter": "J",
-   "href": "songlist.html#s-%E6%B1%9F%E5%A3%B0%E5%85%A5%E6%97%A7%E5%B9%B4"
-  },
-  {
    "name": "关山酒",
    "norm": "关山酒",
    "count": 3,
@@ -118,9 +109,25 @@
    "cover": "",
    "letter": "G",
    "href": "songlist.html#s-%E5%85%B3%E5%B1%B1%E9%85%92"
+  },
+  {
+   "name": "千里邀月",
+   "norm": "千里邀月",
+   "count": 3,
+   "cnt_text": "近10场 3 次",
+   "cover": "",
+   "letter": "Q",
+   "href": "songlist.html#s-%E5%8D%83%E9%87%8C%E9%82%80%E6%9C%88"
   }
  ],
  "recent": [
+  {
+   "date": "2026-11-05",
+   "time": "19:57:09",
+   "dur": "49分33秒",
+   "title": "恢复训练！唱一会",
+   "url": ""
+  },
   {
    "date": "2026-10-20",
    "time": "18:11:13",
@@ -134,18 +141,11 @@
    "dur": "1小时17分",
    "title": "唱歌",
    "url": ""
-  },
-  {
-   "date": "2026-10-15",
-   "time": "17:20:18",
-   "dur": "2小时43分",
-   "title": "唱歌",
-   "url": ""
   }
  ],
- "first_date": "2025-08-05",
- "last_date": "2026-10-20",
- "updated": "2026-11-03 00:03",
+ "first_date": "2025-07-18",
+ "last_date": "2026-11-05",
+ "updated": "2026-11-11 20:41",
  "media": {
   "avatar": "assets/avatar.png",
   "bg": "assets/bg.png",
