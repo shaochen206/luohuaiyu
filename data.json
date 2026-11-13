@@ -4,19 +4,19 @@
   {
    "icon": "▶️",
    "label": "开播次数",
-   "value": 30,
+   "value": 32,
    "unit": "次"
   },
   {
    "icon": "⏱️",
    "label": "累计时长",
-   "value": "48小时25分",
+   "value": "52小时7分",
    "unit": ""
   },
   {
    "icon": "⏳",
    "label": "平均时长",
-   "value": "1小时36分",
+   "value": "1小时37分",
    "unit": ""
   },
   {
@@ -30,7 +30,7 @@
   {
    "icon": "🎵",
    "label": "歌单歌曲数",
-   "value": 515,
+   "value": 529,
    "unit": "首"
   },
   {
@@ -143,9 +143,9 @@
    "url": ""
   }
  ],
- "first_date": "2025-07-18",
+ "first_date": "2025-07-09",
  "last_date": "2026-11-05",
- "updated": "2026-11-11 20:42",
+ "updated": "2026-11-14 01:12",
  "media": {
   "avatar": "assets/avatar.png",
   "bg": "assets/bg.png",
