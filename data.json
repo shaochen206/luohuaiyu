@@ -4,13 +4,13 @@
   {
    "icon": "▶️",
    "label": "开播次数",
-   "value": 32,
+   "value": 34,
    "unit": "次"
   },
   {
    "icon": "⏱️",
    "label": "累计时长",
-   "value": "52小时7分",
+   "value": "55小时9分",
    "unit": ""
   },
   {
@@ -30,13 +30,13 @@
   {
    "icon": "🎵",
    "label": "歌单歌曲数",
-   "value": 529,
+   "value": 540,
    "unit": "首"
   },
   {
    "icon": "👥",
    "label": "粉丝数",
-   "value": "3121",
+   "value": "3124",
    "unit": ""
   },
   {
@@ -84,13 +84,13 @@
    "href": "songlist.html#s-%E6%9C%80%E9%9A%BE%E5%BE%97"
   },
   {
-   "name": "女儿心如水",
-   "norm": "女儿心如水",
+   "name": "夜奔",
+   "norm": "夜奔",
    "count": 7,
    "cnt_text": "累计 7 次",
    "cover": "",
-   "letter": "N",
-   "href": "songlist.html#s-%E5%A5%B3%E5%84%BF%E5%BF%83%E5%A6%82%E6%B0%B4"
+   "letter": "Y",
+   "href": "songlist.html#s-%E5%A4%9C%E5%A5%94"
   },
   {
    "name": "循迹",
@@ -143,9 +143,9 @@
    "url": ""
   }
  ],
- "first_date": "2025-07-09",
+ "first_date": "2025-07-03",
  "last_date": "2026-11-05",
- "updated": "2026-11-14 01:12",
+ "updated": "2026-11-14 23:10",
  "media": {
   "avatar": "assets/avatar.png",
   "bg": "assets/bg.png",
